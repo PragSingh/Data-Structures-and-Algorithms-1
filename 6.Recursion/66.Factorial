@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
+        Scanner scn =new Scanner(System.in);
+        int n = scn.nextInt();
+       // int m = n;
+         int fact = factorial(n);
+         System.out.print(fact);
+    }
+    public static int factorial(int n){
+        if( n == 0){
+          return 1;
+       }
+        int factMn1 = factorial(n-1);
+        
+        int factN = n*factMn1;  
+        return factN;
+    }
+
+}
