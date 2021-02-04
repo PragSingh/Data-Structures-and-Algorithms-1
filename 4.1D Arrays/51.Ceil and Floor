@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+int arr[] = new int[n];
+for(int i=0;i<arr.length;i++){
+    arr[i] = sc.nextInt();
+}
+int x = sc.nextInt();
+int ceil = -1;
+int floor = -1;
+for(int i=0;i<arr.length;i++){
+    if(arr[i] < x){
+        floor = i;
+    }
+}
+    if(arr[floor] == x){
+       ceil =  floor;
+    }else{
+       ceil = floor + 1; 
+    }
+if(ceil >= 0  && ceil < arr.length){
+    System.out.println(arr[ceil]);
+}
+if(floor >= 0 && floor < arr.length){
+    System.out.println(arr[floor]);
+}
+}
+}
