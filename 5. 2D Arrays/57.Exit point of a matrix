@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int m = scn.nextInt();
+    int board[][] = new int[n][m];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            board[i][j] = scn.nextInt();
+        }
+    }
+    exitpoint(board);
+    }
+public static void exitpoint(int board[][]){
+    int row = 0;
+    int col = 0;
+    int dir = 0;
+    while(true){
+    dir = (dir + board[row][col])%4;
+    if(dir==0){
+        //east
+        col++;
+    }
+    else if(dir==1){
+        //south
+        row++;
+    }
+    else if(dir==2){
+        //west
+        col--;
+    }else if(dir==3){
+     row--;
+    }
+    if (row < 0) {
+            row++;
+            break;
+         } else if (col < 0) {
+            col++;
+            break;
+         } else if (row>=board.length) {
+            row--;
+            break;
+         } else if (col>=board[0].length) {
+            col--;
+            break;
+         }
+      }
+
+      System.out.println(row);
+      System.out.println(col);
+    
+}
+}
