@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Day18_7 {
+
+	public static void main(String[] args) {
+		// Dictionary wise arrangement of words.
+		String a="abc abd aab aaa acc acb";
+		String[] b=a.split(" ");
+		String tmp;
+		for(int i=0;i<b.length;i++) {
+			for(int j=0;j<b.length-i-1;j++) {
+				if(b[j].compareTo(b[j+1])>0) {
+					tmp=b[j];
+					b[j]=b[j+1];
+					b[j+1]=tmp;
+				}
+			}
+		}
+		for(String c:b) {
+			System.out.println(c);
+		}
+		
+		
+
+	}
+
+}

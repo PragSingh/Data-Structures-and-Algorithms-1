@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Strings {
+
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	String str = sc.nextLine();
+	//System.out.println(isPallindrom(str));
+	printPallindromicss(str);
+	}
+public static boolean isPallindrom(String str) {
+    int left = 0;
+    int right = str.length()-1;
+    while(left <= right) {
+    	if(str.charAt(left) != str.charAt(right) ) {
+    	 return false;
+    	}
+    	left++;
+    	right--;
+    }
+    return true;
+}
+public static void printPallindromicss(String str) {
+	for(int i=0;i<str.length();i++) {
+		for(int j=i+1;j<=str.length();j++) {
+			String ss = str.substring(i, j);
+			boolean pallindromic = isPallindrom(ss);
+			if(pallindromic) {
+				System.out.println(ss);
+			}
+		}
+	}
+}
+}
