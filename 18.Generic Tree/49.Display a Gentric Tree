@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+
+// write your code here.
+int []arr = {1,2,3,4};
+Node root = constuct(input);
+display(root);
+
+ }
+}
+
+public static void display(Node node){
+    // self printing
+    System.out.print(node.data "->");
+    for(int i=0;i<node.children.size();i++){
+        Node child = node.children.get(i);
+        System.out.print(child.data+" ");
+    }
+    System.out.println(".");
+    
+    // child printing
+    for(int i=0;i<node.children.size();i++){
+        Node child = node.children.get(i);
+        display(child);
+    }
+}
