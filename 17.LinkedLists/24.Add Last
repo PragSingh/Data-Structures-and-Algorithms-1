@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+  public static class Node {
+    int data;
+    Node next;
+  }
+
+  public static class LinkedList {
+    Node head;
+    Node tail;
+    int size;
+
+    void addLast(int val) {
+    Node nn = new Node(); // Creation of linked list
+    nn.data=val; //new node me data ko value di jaa rhi h
+    //LL dosn't exist :
+    if(head==null){ // age hmare paas koi LL ni h, to h,t,s==0
+        head=nn; //head me hm apne new node ke address ko daal denge 
+        tail=nn; // similarly for tail
+        
+        // LL exist:
+    }else{
+            tail.next=nn; //tail ka next hmare new node ke address ko le lega 
+            tail=nn; //tail me nn ka adress daal denge aur tail hmare nn wala bn jayega
+            }
+    size++; //add ke liye size ko increase krna pdega
+         }
+  }
+
+  public static void testList(LinkedList list) {
+    for (Node temp = list.head; temp != null; temp = temp.next) {
+      System.out.println(temp.data);
+    }
+    System.out.println(list.size);
+
+    if (list.size > 0) {
+      System.out.println(list.tail.data);
+    } 
+  }
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    LinkedList list = new LinkedList();
+
+    String str = br.readLine();
+    while(str.equals("quit") == false){
+      if(str.startsWith("addLast")){
+        int val = Integer.parseInt(str.split(" ")[1]);
+        list.addLast(val);
+      } 
+      str = br.readLine();
+    }
+
+    testList(list);
+  }
+}
