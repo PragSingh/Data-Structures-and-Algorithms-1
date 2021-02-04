@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+    Scanner sc  = new Scanner(System.in);
+    int n = sc.nextInt();
+    // System.out.println(fiboTabular(n));
+    // int strg[] = new int[n+1];
+    // System.out.println(fiboMemorization(n,strg));
+    // System.out.println(fiboRecursion(n));
+    System.out.println(fibonacci(n));
+ }
+ 
+//DP : Tabular
+public static int fiboTabular(int n){
+    int strg[] = new int[n+1];
+    strg[0] = 0;
+    strg[1] = 1;
+    
+    for(int i=2;i<=n;i++){
+        strg[i] = strg[i-1] + strg[i-2];
+    }
+    return strg[n];
+}
+
+//DP : Memorization
+public static int fiboMemorization(int n, int strg[]){
+    if(n == 0 || n==1){
+        return n;
+    }else if(strg[n] != 0){
+        return strg[n];
+    }
+    int nm1 = fiboMemorization(n-1,strg);
+    int nm2 = fiboMemorization(n-2,strg);
+    Strg[n] = nm1+nm2;
+    return  nm1+nm2;
+}
+
+//Plain recursion
+public static int fiboRecursion(int n){
+    if(n==0||n==1){
+        return n;
+    }
+    int nm1 = fiboRecursion(n-1);
+    int nm2 = fiboRecursion(n-2);
+    return nm1+nm2;
+}
+  
+//Basic 
+public static int fibonacci(int n){
+    int a = 0;
+      int b = 1;
+      for(int i = 0; i < n; i++){
+          //System.out.println(a);
+           
+           int c = a + b;
+           a = b;
+           b = c;
+}
+    return a; 
+}
+    
+}
