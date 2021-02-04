@@ -1,0 +1,22 @@
+public static void main(String[] args) {
+		// Searching in Array
+		
+		int ar[]= {23,45,56,67,89,90,12};
+		System.out.println("Enter Integer : ");
+		int a=new Scanner(System.in).nextInt();
+		int i;
+		for(i=0;i<ar.length;++i) {
+			if(a==ar[i])
+			{
+				System.out.println("Exist");
+				break;
+			}
+		}
+		if(i==ar.length)
+		{
+			System.out.println("Does Not EXIST");
+		}
+
+	}
+
+}

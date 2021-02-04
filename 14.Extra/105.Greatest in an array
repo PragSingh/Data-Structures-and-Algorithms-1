@@ -1,0 +1,16 @@
+
+public class Day10_4 {
+
+	public static void main(String[] args) {
+		// greatest in an Array
+		int ar[]= {4623,45,570006,67,899,90,12};
+		int max=ar[0];
+		for(int i=0;i<ar.length;++i) {
+			if(max<ar[i])
+				max=ar[i];
+		}
+		System.out.println("Max. is = "+max);
+
+	}
+
+}
