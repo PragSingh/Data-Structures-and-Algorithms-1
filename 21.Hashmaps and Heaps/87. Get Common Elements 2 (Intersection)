@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+   Scanner sc = new Scanner(System.in);
+   int n1=sc.nextInt();
+   int arr1[] = new int[n1];
+   for(int i=0;i<n1;i++){
+      arr1[i]=sc.nextInt(); 
+   }
+   int n2=sc.nextInt();
+   int arr2[] = new int[n2];
+   for(int i=0;i<n2;i++){
+      arr2[i]=sc.nextInt(); 
+   }
+   printCommonElements(arr1,arr2);
+ }
+   public static void printCommonElements(int arr1[],int arr2[]){
+       HashMap<Integer,Integer> hm= new HashMap<>();
+       for(int i=0;i<arr1.length;i++){
+           int key = arr1[i];
+           if(hm.containsKey(key)){
+               int of= hm.get(key);
+               int nf= of + 1;
+               hm.put(key,nf);
+           }else{
+               hm.put(key,1);
+           }
+           }
+       for(int i=0;i<arr2.length;i++){
+           int ival = arr2[i];
+           if(hm.containsKey(ival)){
+               if(hm.get(ival)>0){
+               System.out.println(ival); 
+               int of= hm.get(ival);
+               int nf= of - 1;
+               hm.put(ival,nf);
+               }
+              
+              }
+       }
+       
+   }
+}
