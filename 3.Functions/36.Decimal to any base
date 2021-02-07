@@ -17,7 +17,7 @@ import java.util.*;
           int d = n % b;
           n = n / b;
           rv += mul * d;
-          mul = p * 10;
+          mul = mul * 10;
       }
   
        return rv;
